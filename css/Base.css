@@ -1,0 +1,130 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    font-size: 13px;
+    background-color: #fff;
+}
+
+a {
+    color: #EE4E00;
+}
+
+.gnl-wrap {
+    position: relative;
+    width: 960px;
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+.gnl-header, .gnl-main {
+    position: relative;
+    background: #76A3CC url(img/layout/bg.jpg) top center repeat-y;
+    height: 175px;
+    z-index: 1;
+}
+
+.gnl-logo {
+    position: relative;
+    top: 20px;
+    left: 60px;
+}
+
+.gnl-nav {
+    position: absolute;
+    list-style: none;
+    top: 60px;
+    right: 50px;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    -webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.5, transparent), to(white));
+}
+
+.gnl-nav li {
+    display: inline;
+    margin: 10px;
+}
+
+.gnl-nav li a {
+    color: #000;
+    text-decoration: none;
+}
+
+.gnl-nav li a:hover {
+    text-shadow: 0 0 10px #fff;
+}
+
+
+.gnl-hr {
+    position: relative;
+    background: transparent url(img/layout/hr.png) top right repeat-x;
+    height: 20px;
+    margin: -5px 0 -15px;
+    border: none;
+    z-index: 10;
+}
+
+.gnl-rotator {
+    position: relative;
+    background-image: url(img/layout/rotator.png);
+    height: 300px;
+    width: 800px;
+    margin: 10px auto 10px;
+}
+
+.gnl-main {
+    height: 215px;
+    padding: 10px 40px;
+}
+
+.gnl-main-box {
+    float: left;
+    margin-left: 10px;
+    width: 280px;
+    padding: 10px;
+    _display: inline;
+}
+
+.gnl-main-box h1 {
+    margin: 0;
+    height: 50px;
+}
+
+.gnl-box {
+    position: absolute;
+    width: 231px;
+    height: 346px;
+    padding: 15px;
+    background-image: url(img/layout/box.png);
+    top: 460px;
+    right: 25px;
+    z-index: 12;
+    color: #fff;
+    overflow: hidden;
+}
+
+.gnl-twitter {
+    margin: 5px 0 0;
+}
+
+.gnl-flickr {
+    margin: 0;
+    margin-left: 50px;
+}
+
+.gnl-panel {
+    position: relative;
+    background-image: url(img/layout/panel.png);
+    width: 589px;
+    height: 45px;
+    margin: 15px 30px;
+    padding: 15px;
+}
+
+/* IE 6 PNG Fix, available after build */
+* html img {
+    behavior: url(pngbehavior.htc);
+}
