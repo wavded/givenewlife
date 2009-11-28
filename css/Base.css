@@ -109,25 +109,25 @@ img {
 }
 
 .gnl-footer {
-    height: 92px;
+    height: 112px;
     padding: 10px 40px;
 }
 
 .gnl-box, .gnl-box-small {
     position: absolute;
     width: 231px;
-    height: 346px;
+    height: 368px;
     padding: 15px;
     background-image: url(img/layout/box.png);
-    bottom: -10px;
+    bottom: 0;
     right: 25px;
     z-index: 12;
     color: #fff;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .gnl-box-small {
-    height: 217px;
+    height: 271px;
     background-image: url(img/layout/box-small.png);
 }
 
@@ -163,6 +163,15 @@ img {
     margin: 5px 15px;
     vertical-align: middle;
     cursor: pointer;
+}
+
+.gnl-copyright {
+    text-align: center;
+}
+
+.gnl-monospace {
+    font-family: monospace;
+    font-size: 0.9em;
 }
 
 /* IE 6 PNG Fix, available after build */

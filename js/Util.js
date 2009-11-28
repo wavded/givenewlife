@@ -11,7 +11,7 @@
             var html = [
                 this.ify.clean(tweets[i].text),
                 " <small><em>(",
-                    this.time.datetime(tweets[i].created_at),
+                    this.time.relative(tweets[i].created_at),
                 ")</em></small>"
             ].join("");
             feedEl.innerHTML += '<p>' + html + '</p>';
@@ -26,13 +26,18 @@
         function(data){
             flickrEl.innerHTML = "";
             $.each(data.photos.photo, function(i,item){
-                var photoURL = 'http://farm' + item.farm + '.static.flickr.com/' 
-                            + item.server + '/' + item.id + '_' + item.secret + '_s.jpg';
-                var img = new Image();
-                img.src = photoURL;
-                img.title = item.title;
-                flickrEl.appendChild(img);                
+                var thumbURL = 'http://farm' + item.farm + '.static.flickr.com/' 
+                            + item.server + '/' + item.id + '_' + item.secret + '_s.jpg',
+                    photoURL = 'http://farm' + item.farm + '.static.flickr.com/' 
+                            + item.server + '/' + item.id + '_' + item.secret + '.jpg';
+                var html = [
+                    '<a href="'+photoURL+'" class="lightbox" title="'+item.title+'">',
+                    '<img src="'+thumbURL+'" alt="'+item.title+'"/>"',
+                    '</a>'
+                ].join("");
+                flickrEl.innerHTML += html;                
             });
+            $(".lightbox").lightBox();
         }
     );
     
