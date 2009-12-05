@@ -4,7 +4,7 @@ html, body {
 }
 
 body {
-    font-family: sans-serif;
+    font-family: verdana, geneva, sans-serif;
     font-size: 13px;
     background-color: #fff;
 }
@@ -69,11 +69,12 @@ img {
     margin: -5px 0 -15px;
     border: none;
     z-index: 10;
+    display: none !lt ie 8;
 }
 
 .gnl-rotator {
     position: relative;
-    background-image: url(img/layout/rotator.png);
+    background-image: url(img/layout/rotator.jpg);
     height: 300px;
     width: 800px;
     margin: 10px auto 10px;
@@ -179,5 +180,5 @@ img {
 
 /* IE 6 PNG Fix, available after build */
 * html img {
-    behavior: url(pngbehavior.htc);
+    behavior: url(../pngbehavior.htc);
 }
