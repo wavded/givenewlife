@@ -128,6 +128,7 @@ img {
 
 .gnl-box-small {
     height: 271px;
+    bottom: -10px;
     background-image: url(img/layout/box-small.png);
 }
 
@@ -153,6 +154,7 @@ img {
     height: 62px;
     margin: 15px 30px;
     padding: 15px;
+    color: #fff;
 }
 
 .gnl-button {
@@ -161,6 +163,7 @@ img {
     width: 250px;
     height: 75px;
     margin: 5px 15px;
+    background-color: transparent;
     vertical-align: middle;
     cursor: pointer;
 }

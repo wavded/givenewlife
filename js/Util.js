@@ -35,7 +35,7 @@
                     '<img src="'+thumbURL+'" alt="'+item.title+'"/>"',
                     '</a>'
                 ].join("");
-                flickrEl.innerHTML += html;                
+                flickrEl.innerHTML += html;       
             });
             $(".lightbox").lightBox();
         }
@@ -46,9 +46,11 @@
     if(tumblrEl){
         $.getJSON('http://givenewlife.tumblr.com/api/read/json?num=1&callback=?',function(data){
             var dummy = doc.createElement("p"),
-                post = data.posts[0];
-            dummy.innerHTML = post["regular-body"] || post["quote-text"];
-            tumblrEl.innerHTML = (dummy.innerText || dummy.textContent).substring(0,250) + "...";
+                post = data.posts[0],
+                bodyHTML = post["regular-body"] || post["quote-text"];
+            $(dummy).append(bodyHTML);
+            var bodyText = dummy.innerText || dummy.textContent;
+            tumblrEl.innerHTML = bodyText.substring(0,250) + "...";
             dummy = null;
         });
     }
