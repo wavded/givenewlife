@@ -45,9 +45,36 @@
     
     if(tumblrEl){
         $.getJSON('http://givenewlife.tumblr.com/api/read/json?num=1&callback=?',function(data){
+            console.log(data);
             var dummy = doc.createElement("p"),
                 post = data.posts[0],
-                bodyHTML = post["regular-body"] || post["quote-text"];
+                type = post.type,
+                bodyHTML = "";
+                
+            switch(type){
+                case "regular":
+                    bodyHTML = post["regular-body"];
+                    break;
+                case "link":
+                    bodyHTML = post["link-description"] || post["link-text"];
+                    break;
+                case "quote":
+                    bodyHTML = post["quote-text"];
+                    break;
+                case "photo":
+                    bodyHTML = post["photo-caption"];
+                    break;
+                case "conversation":
+                    bodyHTML = post["conversation-text"];
+                    break;
+                case "video":
+                    bodyHTML = post["video-caption"];
+                    break;
+                case "audio":
+                    bodyHTML = post["audio-caption"];
+                    break;
+                default:
+            }
             $(dummy).append(bodyHTML);
             var bodyText = dummy.innerText || dummy.textContent;
             tumblrEl.innerHTML = bodyText.substring(0,250) + "...";
