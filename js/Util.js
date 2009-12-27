@@ -45,7 +45,6 @@
     
     if(tumblrEl){
         $.getJSON('http://givenewlife.tumblr.com/api/read/json?num=1&callback=?',function(data){
-            console.log(data);
             var dummy = doc.createElement("p"),
                 post = data.posts[0],
                 type = post.type,
